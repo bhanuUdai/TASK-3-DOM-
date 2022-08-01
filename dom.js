@@ -79,7 +79,7 @@ items.style.color='red'
 
 const third=document.querySelector('.list-group-item:nth-child(3)')
 third.style.background='violet'
-//third.hidden='true'
+third.hidden='true'
 
 
 //QUERYSELECTOR ALL
