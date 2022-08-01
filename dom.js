@@ -53,7 +53,45 @@ Items[2].style.background='green'
 let TagName=document.getElementsByTagName('li');
 for(let i=0;i<TagName.length;i++)
 {
-    TagName[i].style.backgroundColor='orange'
+    TagName[i].style.backgroundColor='lightblue'
 }
 
 TagName[4].innerHTML='<h3>HLLO</h3>'
+
+//query selector
+
+
+let header=document.querySelector('#main-header');
+header.style.borderBottom='3px solid black';
+
+let input =document.querySelector('input')
+input.style.background='pink'
+input.value='BHANU';
+
+let submit=document.querySelector('input[type=submit]')
+submit.value='hitit';
+submit.style.color='brown';
+
+let items=document.querySelector(".list-group-item");
+items.style.color='red'
+
+//document.querySelector('.list-group-item:nth-child(2)').style.background='green' 
+
+const third=document.querySelector('.list-group-item:nth-child(3)')
+third.style.background='violet'
+//third.hidden='true'
+
+
+//QUERYSELECTOR ALL
+
+const Item2=document.querySelectorAll('.list-group-item');
+console.log(Item2)
+Item2[1].style.color='green';
+
+let odd=document.querySelectorAll('.list-group-item:nth-child(odd)');
+//console.log(odd)
+
+for(let i=0;i<odd.length;i++)
+{
+    odd[i].style.background='pink'
+}
