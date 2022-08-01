@@ -25,7 +25,20 @@
 const headtitle=document.getElementById('main-header');
 headtitle.style.borderBottom='3px solid blue'
 const add=document.all[14]
-add.innerText='ADD ITEMS'
+add.style.fontWeight='bold'
 add.style.color='green'
 //console.log(add)
-console.log(document.all)
+//console.log(document.all)
+
+let Items=document.getElementsByClassName('list-group-item')
+Items[2].style.background='green'
+
+// Items.forEach((color)=>
+// {
+//     color.style.fontWeight='bold'
+// })
+
+for(let i=0;i<Items.length;i++)
+{
+    Items[i].style.fontWeight='bold'
+}
