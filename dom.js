@@ -26,9 +26,10 @@ const headtitle=document.getElementById('main-header');
 headtitle.style.borderBottom='3px solid blue'
 const add=document.all[14]
 add.style.fontWeight='bold'
-add.style.color='green'
+add.style.color='grey'
 //console.log(add)
-//console.log(document.all)
+//console.log(document)
+console.log(document.body)
 
 let Items=document.getElementsByClassName('list-group-item')
 Items[2].style.background='green'
@@ -38,7 +39,21 @@ Items[2].style.background='green'
 //     color.style.fontWeight='bold'
 // })
 
-for(let i=0;i<Items.length;i++)
+// for(let i=0;i<Items.length;i++)
+// {
+//     Items[i].style.fontWeight='bold'
+// }
+
+//changing font of Add items can also done with this way
+// let Add=document.getElementsByClassName("title")
+// Add[0].style.fontWeight='bold'
+
+//getElementsByTagName work ni same way as class do
+
+let TagName=document.getElementsByTagName('li');
+for(let i=0;i<TagName.length;i++)
 {
-    Items[i].style.fontWeight='bold'
+    TagName[i].style.backgroundColor='orange'
 }
+
+TagName[4].innerHTML='<h3>HLLO</h3>'
