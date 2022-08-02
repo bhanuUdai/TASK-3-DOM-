@@ -98,8 +98,8 @@
 
 
 //CREATING NODE AND MODIFYING DOM
-const items=document.querySelector('#items')
-console.log(items)
+// const items=document.querySelector('#items')
+// console.log(items)
 
 //parentElement
 // console.log(items.parentElement);
@@ -165,20 +165,72 @@ console.log(items)
 //  console.log(newDiv)
 
 //SOLUTION
-const add=document.createElement('div');
-add.className='hey';
-add.setAttribute('style','color:red;');
+// const add=document.createElement('div');
+// add.className='hey';
+// add.setAttribute('style','color:red;');
 
-const addText=document.createTextNode('HELLO');
-add.appendChild(addText);
+// const addText=document.createTextNode('HELLO');
+// add.appendChild(addText);
 
-let indom=document.querySelector(' #main #items');
+// let indom=document.querySelector(' #main #items');
 
-console.log(indom)
+// console.log(indom)
 
-let before=document.querySelector(' #main .list-group-item');
-indom.insertBefore(add,before)
+// let before=document.querySelector(' #main .list-group-item');
+// indom.insertBefore(add,before)
 
 
 
-//console.log(add)
+// console.log(add)
+
+
+//ADDING BUTTON TASK:8
+
+let form=document.querySelector('#addForm');
+let  UL=document.querySelector('#items');
+
+form.addEventListener('submit' , onsubmit);
+UL.addEventListener('click', onclick);
+
+function onsubmit(e)
+{
+    e.preventDefault();
+
+    let Items=document.querySelector('#item')     
+
+    //create list
+
+    let newlist=document.createElement('li');
+    newlist.className='list-group-item';
+    newlist.appendChild(document.createTextNode(Items.value));
+
+    // ADD BUTTON
+    let deletebtn =document.createElement('buttton');
+    deletebtn.className='btn btn-danger btn-sm float-right delete';
+    deletebtn.appendChild(document.createTextNode('X'));
+    newlist.appendChild(deletebtn);
+
+    //ADD EDIT BUTTON
+    let edit=document.createElement('button');
+    edit.className="float-right";
+    edit.appendChild(document.createTextNode('edit'));
+    newlist.append(edit);
+
+
+
+    UL.appendChild(newlist);
+}
+
+function onclick(e)
+{
+    e.preventDefault();
+
+    if(e.target.classList.contains('delete'))
+    {
+        if(confirm('Are you sure boii'))
+        {
+            let li=e.target.parentElement;
+            UL.removeChild(li)
+        }
+    }
+}
