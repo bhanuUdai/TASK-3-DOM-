@@ -188,9 +188,11 @@
 
 let form=document.querySelector('#addForm');
 let  UL=document.querySelector('#items');
+let filteritems=document.querySelector('#filter');
 
 form.addEventListener('submit' , onsubmit);
 UL.addEventListener('click', onclick);
+filteritems.addEventListener('keyup',onkeyup);
 
 function onsubmit(e)
 {
@@ -234,3 +236,31 @@ function onclick(e)
         }
     }
 }
+
+
+//FILTER ITEMS
+
+
+function onkeyup(e)
+{
+    let text=e.target.value.toLowerCase();
+
+    //selecting item list
+    let itemlist=UL.querySelectorAll('.list-group-item');
+
+    //traverse through each list
+    itemlist.forEach(function(item)
+    {
+        let itemname=item.firstChild.textContent;  //getting text i.e name of each list
+
+        if(itemname.toLowerCase().indexOf(text)!==-1)  //if text content of list == search value[indexOf(text)==-1 means not equal and indexOf(text)!==-1 means equal, value we search in search box will stored in form of indxes] 
+        {
+            item.style.display='block'   //to display complete block of that item list if matches
+        }
+        else
+        {
+            item.style.display='none'  //hide list if not match
+        }
+    })
+}
+console.log()
