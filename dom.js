@@ -316,6 +316,63 @@
 
 ///ADDING LOCAL STORAGE
 
+// let Form=document.querySelector('#my-form');
+// let unord=document.querySelector('.items');
+
+
+
+
+// Form.addEventListener('submit',onsubmit)
+
+// function onsubmit(e)
+// {
+//     e.preventDefault();
+
+//     let Name=document.querySelector('#name');
+//     let Mail=document.querySelector('#email');
+
+//     localStorage.setItem(`${Name.value}`,`${Mail.value}`)  //setting name and mail to local storage
+
+//     let li=document.createElement('li');
+//     li.className='item';
+
+//     let text=document.createTextNode(`Name : ${Name.value} Mail : ${Mail.value}`);
+
+//     li.appendChild(text)
+//     unord.appendChild(li)
+
+
+// }
+// // localStorage.setItem('name','Bhanu')  // to set items  localStorage.setItem('key','value')
+// // console.log(localStorage.getItem('name'))  // to get items      localStorage.getItem('key')
+// // sessionStorage.setItem('name','rahul')
+// // document.cookie='name=robin;expires=' + new Date(9999,0,1).toUTCString()
+
+// // console.log(localStorage);
+// // console.log(sessionStorage);
+// // console.log(document.cookie)
+
+
+// //STORING OBJECTS IN LOCAL STORAGE
+
+// let myObj={
+//     name:'bhanu',
+//     age:25
+// }
+
+//use JSON.stringify to convert object into sring bec. lc store only strings
+// let obj_serialize=JSON.stringify(myObj);
+
+
+// localStorage.setItem('myobject',obj_serialize);
+
+// //use JSON.parse to agin convert srting into object
+// let obj_deserialize=JSON.parse(localStorage.getItem('myobject'));
+
+// console.log(obj_deserialize);
+
+
+
 let Form=document.querySelector('#my-form');
 let unord=document.querySelector('.items');
 
@@ -331,7 +388,16 @@ function onsubmit(e)
     let Name=document.querySelector('#name');
     let Mail=document.querySelector('#email');
 
-    localStorage.setItem(`${Name.value}`,`${Mail.value}`)  //setting name and mail to local storage
+    let obj={
+        name : `${Name.value}`,
+        mail : `${Mail.value}`
+    };
+
+    let obj_serialize=JSON.stringify(obj);
+    localStorage.setItem('object',obj_serialize);
+    let obj_deserialize=JSON.parse(localStorage.getItem('object'))
+    console.log(obj_deserialize)
+
 
     let li=document.createElement('li');
     li.className='item';
@@ -340,15 +406,4 @@ function onsubmit(e)
 
     li.appendChild(text)
     unord.appendChild(li)
-
-
 }
-// localStorage.setItem('name','Bhanu')  // to set items  localStorage.setItem('key','value')
-// console.log(localStorage.getItem('name'))  // to get items      localStorage.getItem('key')
-// sessionStorage.setItem('name','rahul')
-// document.cookie='name=robin;expires=' + new Date(9999,0,1).toUTCString()
-
-// console.log(localStorage);
-// console.log(sessionStorage);
-// console.log(document.cookie)
-
