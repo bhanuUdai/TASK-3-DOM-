@@ -314,7 +314,7 @@
 
 
 
-
+///ADDING LOCAL STORAGE
 
 let Form=document.querySelector('#my-form');
 let unord=document.querySelector('.items');
