@@ -31,6 +31,37 @@
 <html>
     <head>
         <title> APPOINTMENT APP</title>
+        <style>
+          body {
+            background-image: url(https://images.pexels.com/photos/7846665/pexels-photo-7846665.jpeg?auto=compress&cs=tinysrgb&w=600);
+            background-repeat: no-repeat;
+            background-size: cover;
+          }
+          header {
+            background-color: rgb(107, 247, 14);
+            text-align: center;
+          }
+          form {
+            
+            width: 600px; 
+            height: 400px;
+            margin: auto;
+          }
+          #Name {
+            width: 600px;
+            height :20px;
+            border:1px solid pink ;
+          }
+          #Mail {
+            width: 600px;
+            height: 20px;
+            border:1px solid pink ;
+          }
+          #hit_me {
+            color: rgb(71, 228, 24);
+          }
+          
+        </style>
     </head>
     <body>
         <form id="form-1" autocomplete="on">
@@ -40,10 +71,12 @@
         </h2>
         </header>
         <label for="Name">Name</label><br>
-        <input type="text" id="Name" ><br>
+        <input type="text" id="Name" >
+        <br><br>
         <label for="Mail">Email ID</label><br>
-        <input type="text" id="Mail"><br>
-        <input type="submit" value="HIT ME">
+        <input type="text" id="Mail">
+        <br><br>
+        <input type="submit" id="hit_me" value="HIT ME">
         <ul class="for_ul"></ul>
         </form>
         <script src="appointment.js"></script>
